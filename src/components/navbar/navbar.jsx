@@ -1,5 +1,5 @@
-import { NavItem } from "../nav-item";
-import { Title } from "../title";
+import { NavItem } from "./nav-item";
+import { Title } from "./title";
 import * as Style from "./styles";
 
 const items = [
@@ -22,7 +22,7 @@ export const Navbar = (props) => {
         </Style.Box>
         <Style.Box>
           {items.map((item) => (
-            <NavItem key={item} text={item} />
+            <NavItem key={item} text={item}/>
           ))}
         </Style.Box>
       </Style.Box>
