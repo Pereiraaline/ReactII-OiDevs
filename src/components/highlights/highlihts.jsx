@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+//import { fetcherHighlihts } from "../../services/index";
 import { Avatar } from "../avatar";
+//import { Text } from "../../ui/text/index";
 import * as Styles from "./styles";
 
 const highlightList = [
@@ -49,7 +51,6 @@ export const Highlights = () => {
 
   React.useEffect(() => {
     const meuArray = normalizeData(highlightList);
-
   }, []);
 
   return (
@@ -63,3 +64,41 @@ export const Highlights = () => {
     </Styles.Wrapper>
   );
 };
+
+//tentativa de utilizar requisição na api para renderizar as fotos.
+// export const Highlights = () => {
+//   const [photos, setPhotos] = useState([]);
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [hasError, setHasError] = useState(false);
+
+//   React.useEffect(() => {
+    
+//     const makeRequest = async () => {
+//       setIsLoading(true);
+//       try{
+//         const response = await fetcherHighlihts("5");
+//         setPhotos(response);
+//       }catch (error){
+//         setHasError(true);
+//       } finally{
+//         setIsLoading(false);
+//       }
+      
+//     };
+
+//     makeRequest();
+//   }, []);
+
+//   return (
+//     <Styles.Wrapper>
+//       {isLoading && <Text>Carregando ...</Text>}
+//       {hasError && <Text>Epa, deu ruim</Text>}
+//       {photos.map((photo) => (
+//         <Styles.HighlighItem key={photo.id}>
+//           <Avatar size="small" imageSrc={photo.urls.thumb} />
+//           <Styles.HighlightText>{photo.description}</Styles.HighlightText>
+//         </Styles.HighlighItem>
+//       ))}
+//     </Styles.Wrapper>
+//   );
+// };

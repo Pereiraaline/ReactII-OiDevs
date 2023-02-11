@@ -14,9 +14,6 @@ export const Feed = () => {
             try{
                 const response = await fetcher("photos");
                 setItems(response);
-
-                console.log(response);
-
             }catch (error){
                 setHasError(true);
             } finally{
@@ -25,7 +22,7 @@ export const Feed = () => {
         };
 
         makeRequest();
-        
+
     },[]);
    return (
      <Styles.Wrapper>

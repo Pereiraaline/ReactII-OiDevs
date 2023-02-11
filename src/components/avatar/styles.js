@@ -10,7 +10,10 @@ export const Wrapper = styled.div((props) => {
     };
 });
 
-export const Image = styled.img``;
+export const Image = styled.img`
+object-fit: cover;
+width: 100%;
+`;
 
 const defaultSize = {
     width: '150px',
