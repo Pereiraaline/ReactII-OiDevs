@@ -1,3 +1,4 @@
+import { Feed } from "./components/feed/feed";
 import { Header } from "./components/header";
 import { Highlights } from "./components/highlights/highlihts";
 import { Navbar } from "./components/navbar";
@@ -13,8 +14,10 @@ function App() {
       <GridItem>
         <Header />
         <Highlights />
+        <Feed />
       </GridItem>
     </Grid>
+
   );
 }
 

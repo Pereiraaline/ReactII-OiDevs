@@ -49,6 +49,7 @@ export const Highlights = () => {
 
   React.useEffect(() => {
     const meuArray = normalizeData(highlightList);
+
   }, []);
 
   return (
