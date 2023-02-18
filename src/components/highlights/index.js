@@ -1,1 +1,1 @@
-export { Highlights } from "./highlights";
+export { Highlights } from "./highlihts";
