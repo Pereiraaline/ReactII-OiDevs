@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import { Text, TextLink } from "../../ui/text/index";
 import { Avatar } from "../avatar/index";
 import { Button } from "../../ui/button/button";
 import * as Styles from './styles';
 import { AiOutlineUserAdd } from "react-icons/ai";
+import { InstaContext } from "../../App";
 
 export const Header = (props) => {
+
+   const state = useContext(InstaContext);
+
   return (
     <>
       <Styles.HeaderWrapper>
@@ -13,7 +18,7 @@ export const Header = (props) => {
         </Styles.AvatarWrapper>
         <Styles.Content>
           <Styles.Data>
-            <Text bold>@happywoman</Text>
+            <Text bold>{state.meuState.user.username}</Text>
             <Button>Seguindo</Button>
             <Button>Enviar mensagem</Button>
             <Button>

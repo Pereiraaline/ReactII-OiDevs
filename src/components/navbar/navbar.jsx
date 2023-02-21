@@ -1,4 +1,6 @@
-import { NavItem } from '../navItem/nav-item';
+import { InstaContext } from "../../App";
+import { useContext } from "react";
+import { NavItem } from "../navItem/nav-item";
 import { Title } from "../../ui/title/index";
 import * as Style from "./styles";
 
@@ -13,10 +15,13 @@ const items = [
   "Perfil",
 ];
 
-export const Navbar = (props) => {
-   const onClickLoginButtonHandler = () => {
-     props.onClickLoginButton("login");
-   };
+export const Navbar = () => {
+  const { meuState, meuDispatch } = useContext(InstaContext);
+
+  const onClickLoginButtonHandler = () => {
+    meuDispatch({ type: "change_current_page", payload: "login" });
+  };
+  
   return (
     <Style.NavbarWrapper>
       <Style.Box>
@@ -30,7 +35,7 @@ export const Navbar = (props) => {
         </Style.Box>
       </Style.Box>
       <NavItem text={"Mais"} />
-      <NavItem onClick={props.onClick} text={"Sair"} />
+      <NavItem onClick={onClickLoginButtonHandler} text={"Sair"} />
     </Style.NavbarWrapper>
   );
 };
